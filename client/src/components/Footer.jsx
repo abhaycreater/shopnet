@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../style/componentsCss/footer.css";
@@ -31,9 +32,17 @@ const Footer = () => {
           </p>
 
           <div className="footer-socials">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="YouTube">YouTube</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
+            <button type="button" aria-label="Instagram">
+              Instagram
+            </button>
+
+            <button type="button" aria-label="YouTube">
+              YouTube
+            </button>
+
+            <button type="button" aria-label="Facebook">
+              Facebook
+            </button>
           </div>
         </div>
 
@@ -85,4 +94,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
