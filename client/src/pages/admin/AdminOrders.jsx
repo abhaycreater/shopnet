@@ -1,5 +1,5 @@
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, {useCallback , useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../style/admin/adminOrders.css";
 import API_URL from '../../config/api.js'
@@ -67,7 +67,7 @@ const AdminOrders = () => {
   // FETCH ORDERS
   // =========================
 
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     try {
       setLoading(true);
       setError("");
@@ -100,13 +100,13 @@ const AdminOrders = () => {
     } finally {
       setLoading(false);
     }
-  };
+  },[token]);
 
   useEffect(() => {
     if (token) {
       fetchOrders();
     }
-  }, [token]);
+  }, [token , fetchOrders]);
 
   // =========================
   // ORDER STATUS UPDATE
