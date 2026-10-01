@@ -1,0 +1,23 @@
+{
+  "name": "shopenet",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Abhay",
+    "Dev"
+  ],
+  "license": "ISC",
+  "author": "Abhay",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd backend && npm install && cd ../client && npm install",
+    "dev:server" :"cd backend && npm run dev",
+    "dev:client" : "cd client && npm run start",
+    "dev" : "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
