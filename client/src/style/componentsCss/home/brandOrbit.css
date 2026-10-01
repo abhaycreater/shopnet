@@ -1,0 +1,727 @@
+/* =====================================================
+   BRAND ORBIT SECTION
+===================================================== */
+
+.brand-orbit-section {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 40px 0 100px;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.brand-orbit-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 35px;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.brand-orbit-title span {
+  width: 35px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(192, 132, 252, 0.5)
+    );
+}
+
+
+.brand-orbit-title span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(192, 132, 252, 0.5),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   ORBIT
+===================================================== */
+
+.brand-orbit {
+  --orbit-rotate-x: 0deg;
+  --orbit-rotate-y: 0deg;
+
+  --orbit-scale-x: 1;
+  --orbit-scale-y: 1;
+
+  --orbit-move-x: 0px;
+  --orbit-move-y: 0px;
+
+  --orbit-glow: 0.12;
+
+  position: relative;
+
+  width: 540px;
+
+  height: 540px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  perspective: 1200px;
+
+  transform:
+    translate3d(
+      var(--orbit-move-x),
+      var(--orbit-move-y),
+      0
+    )
+    rotateX(var(--orbit-rotate-x))
+    rotateY(var(--orbit-rotate-y))
+    scale(
+      var(--orbit-scale-x),
+      var(--orbit-scale-y)
+    );
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.35s
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+
+  cursor: crosshair;
+}
+
+
+/* =====================================================
+   MOUSE GLOW
+===================================================== */
+
+.brand-mouse-glow {
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.18),
+      rgba(124, 58, 237, 0.08),
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  animation:
+    brandGlowPulse
+    4s
+    ease-in-out
+    infinite;
+
+  opacity:
+    var(--orbit-glow);
+
+  transition:
+    opacity 0.4s ease;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+@keyframes brandGlowPulse {
+
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+
+/* =====================================================
+   RINGS
+===================================================== */
+
+.brand-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(192, 132, 252, 0.13);
+
+  transform-style: preserve-3d;
+
+  animation-timing-function:
+    linear;
+
+  animation-iteration-count:
+    infinite;
+
+  will-change:
+    transform;
+}
+
+
+/* =====================================================
+   OUTER RING
+===================================================== */
+
+.brand-ring-outer {
+  width: 500px;
+
+  height: 500px;
+
+  animation:
+    brandOuterRotate
+    28s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   INNER RING
+===================================================== */
+
+.brand-ring-inner {
+  width: 330px;
+
+  height: 330px;
+
+  border-color:
+    rgba(232, 121, 249, 0.12);
+
+  animation:
+    brandInnerRotate
+    20s
+    linear
+    infinite;
+}
+
+
+/* =====================================================
+   ROTATION
+===================================================== */
+
+@keyframes brandOuterRotate {
+
+  from {
+    transform:
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateZ(360deg);
+  }
+
+}
+
+
+@keyframes brandInnerRotate {
+
+  from {
+    transform:
+      rotateZ(360deg);
+  }
+
+  to {
+    transform:
+      rotateZ(0deg);
+  }
+
+}
+
+
+/* =====================================================
+   BRAND NAME
+===================================================== */
+
+.brand-name {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    9px 15px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid
+    rgba(192, 132, 252, 0.16);
+
+  border-radius: 30px;
+
+  background:
+    rgba(20, 10, 35, 0.75);
+
+  backdrop-filter:
+    blur(10px);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.2);
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.brand-name:hover {
+  color: white;
+
+  border-color:
+    rgba(192, 132, 252, 0.65);
+
+  background:
+    rgba(124, 58, 237, 0.2);
+
+  box-shadow:
+    0 0 25px
+    rgba(168, 85, 247, 0.35);
+}
+
+
+/* =====================================================
+   OUTER POSITIONS
+===================================================== */
+
+.brand-one {
+  top: -17px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.brand-two {
+  top: 18%;
+  right: -35px;
+}
+
+
+.brand-three {
+  bottom: 18%;
+  right: -30px;
+}
+
+
+.brand-four {
+  bottom: -17px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.brand-five {
+  bottom: 18%;
+  left: -30px;
+}
+
+
+.brand-six {
+  top: 18%;
+  left: -35px;
+}
+
+
+/* =====================================================
+   INNER POSITIONS
+===================================================== */
+
+.inner-one {
+  top: -14px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.inner-two {
+  top: 50%;
+  right: -25px;
+
+  transform:
+    translateY(-50%);
+}
+
+
+.inner-three {
+  bottom: -14px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.inner-four {
+  top: 50%;
+  left: -25px;
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* =====================================================
+   CENTER
+===================================================== */
+
+.brand-orbit-center {
+  position: relative;
+
+  z-index: 5;
+
+  width: 175px;
+
+  height: 175px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(192, 132, 252, 0.25);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.22),
+      rgba(20, 10, 35, 0.92) 68%
+    );
+
+  box-shadow:
+    0 0 50px
+    rgba(124, 58, 237, 0.12),
+
+    inset 0 0 35px
+    rgba(168, 85, 247, 0.08);
+
+  transition:
+    transform 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.brand-orbit:hover .brand-orbit-center {
+  transform:
+    scale(1.05);
+}
+
+
+/* =====================================================
+   CENTER DASHED CIRCLE
+===================================================== */
+
+.brand-orbit-center::before {
+  content: "";
+
+  position: absolute;
+
+  width: 135px;
+
+  height: 135px;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed
+    rgba(216, 180, 254, 0.18);
+
+  animation:
+    centerRotate
+    12s
+    linear
+    infinite;
+}
+
+
+@keyframes centerRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   CENTER TEXT
+===================================================== */
+
+.brand-orbit-center span {
+  color:
+    #c084fc;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 5px;
+}
+
+
+.brand-orbit-center strong {
+  color: white;
+
+  font-size: 23px;
+
+  letter-spacing: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e9d5ff,
+      #a78bfa,
+      #e879f9
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.brand-orbit-center small {
+  margin-top: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   MOUSE HINT
+===================================================== */
+
+.brand-orbit-hint {
+  margin-top: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.2);
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  transform:
+    translateY(5px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+.brand-orbit-section:hover
+.brand-orbit-hint {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .brand-orbit-section {
+    padding:
+      30px 0 80px;
+  }
+
+  .brand-orbit {
+    width: 400px;
+
+    height: 400px;
+
+    transform:
+      scale(0.9);
+  }
+
+  .brand-ring-outer {
+    width: 370px;
+    height: 370px;
+  }
+
+  .brand-ring-inner {
+    width: 245px;
+    height: 245px;
+  }
+
+  .brand-orbit-center {
+    width: 140px;
+    height: 140px;
+  }
+
+  .brand-orbit-center strong {
+    font-size: 19px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .brand-orbit {
+    width: 320px;
+
+    height: 320px;
+
+    transform:
+      scale(0.85);
+  }
+
+  .brand-ring-outer {
+    width: 300px;
+    height: 300px;
+  }
+
+  .brand-ring-inner {
+    width: 200px;
+    height: 200px;
+  }
+
+  .brand-orbit-center {
+    width: 115px;
+    height: 115px;
+  }
+
+  .brand-orbit-center::before {
+    width: 90px;
+    height: 90px;
+  }
+
+  .brand-orbit-center strong {
+    font-size: 16px;
+  }
+
+  .brand-orbit-center span {
+    font-size: 6px;
+  }
+
+  .brand-orbit-center small {
+    font-size: 5px;
+  }
+
+  .brand-name {
+    padding:
+      7px 10px;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+  .brand-orbit-hint {
+    display: none;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .brand-ring,
+  .brand-orbit-center::before,
+  .brand-mouse-glow {
+    animation: none;
+  }
+
+  .brand-orbit {
+    transition: none;
+  }
+
+}

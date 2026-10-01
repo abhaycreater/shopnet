@@ -1,0 +1,810 @@
+/* ========================================
+   SPECIAL OFFER SECTION
+======================================== */
+
+.special-offer-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 110px 6%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(124, 58, 237, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(192, 132, 252, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #080512,
+      #130825,
+      #0b0618
+    );
+}
+
+
+/* ========================================
+   BACKGROUND GLOW
+======================================== */
+
+.offer-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(50px);
+
+  opacity: 0.4;
+
+  animation: offerGlowMove 7s ease-in-out infinite alternate;
+}
+
+.offer-glow-one {
+  width: 300px;
+  height: 300px;
+
+  top: -100px;
+  left: -80px;
+
+  background: rgba(124, 58, 237, 0.35);
+}
+
+.offer-glow-two {
+  width: 350px;
+  height: 350px;
+
+  right: -100px;
+  bottom: -120px;
+
+  background: rgba(168, 85, 247, 0.25);
+
+  animation-delay: 2s;
+}
+
+@keyframes offerGlowMove {
+
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(40px, -20px) scale(1.15);
+  }
+
+}
+
+
+/* ========================================
+   PARTICLES
+======================================== */
+
+.offer-particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #c4b5fd;
+
+  box-shadow:
+    0 0 12px rgba(196, 181, 253, 0.8);
+
+  animation: offerParticleFloat 4s ease-in-out infinite;
+}
+
+.offer-particle-one {
+  top: 20%;
+  left: 10%;
+}
+
+.offer-particle-two {
+  top: 70%;
+  left: 30%;
+
+  animation-delay: 1s;
+}
+
+.offer-particle-three {
+  top: 25%;
+  right: 15%;
+
+  animation-delay: 2s;
+}
+
+.offer-particle-four {
+  bottom: 15%;
+  right: 30%;
+
+  animation-delay: 3s;
+}
+
+@keyframes offerParticleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-20px);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* ========================================
+   OFFER CARD
+======================================== */
+
+.special-offer-card {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  max-width: 1400px;
+
+  min-height: 520px;
+
+  margin: 0 auto;
+
+  padding: 70px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(192, 132, 252, 0.25);
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(124, 58, 237, 0.18),
+      rgba(255, 255, 255, 0.035),
+      rgba(168, 85, 247, 0.10)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========================================
+   TOP LIGHT
+======================================== */
+
+.special-offer-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -30%;
+
+  width: 60%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c084fc,
+    #ffffff,
+    #8b5cf6,
+    transparent
+  );
+
+  animation: offerTopLight 4s linear infinite;
+}
+
+@keyframes offerTopLight {
+
+  from {
+    left: -60%;
+  }
+
+  to {
+    left: 120%;
+  }
+
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.offer-content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 580px;
+}
+
+.offer-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 15px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(192, 132, 252, 0.3);
+
+  border-radius: 30px;
+
+  background: rgba(139, 92, 246, 0.10);
+
+  color: #c4b5fd;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  animation: offerLabelPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes offerLabelPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(168, 85, 247, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(168, 85, 247, 0.15);
+  }
+
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.offer-content h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 68px);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.offer-content h2 span {
+  background: linear-gradient(
+    90deg,
+    #a78bfa,
+    #c084fc,
+    #e9d5ff
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.offer-content p {
+  max-width: 500px;
+
+  margin: 25px 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* ========================================
+   DISCOUNT
+======================================== */
+
+.offer-discount {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 25px 0;
+}
+
+.offer-discount strong {
+  font-size: 58px;
+
+  line-height: 1;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #c4b5fd
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.offer-discount div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.offer-discount div span {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #a78bfa;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.offer-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 25px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #a855f7
+    );
+
+  box-shadow:
+    0 12px 30px rgba(124, 58, 237, 0.3);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.offer-button span {
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.offer-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(139, 92, 246, 0.4);
+}
+
+.offer-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ========================================
+   VISUAL
+======================================== */
+
+.offer-visual {
+  position: relative;
+
+  width: 100%;
+
+  height: 420px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ========================================
+   ORBIT RINGS
+======================================== */
+
+.offer-ring {
+  position: absolute;
+
+  border: 1px solid rgba(192, 132, 252, 0.18);
+
+  border-radius: 50%;
+
+  transform: rotateX(65deg);
+
+  animation: offerOrbit 8s linear infinite;
+}
+
+.offer-ring-one {
+  width: 320px;
+  height: 320px;
+}
+
+.offer-ring-two {
+  width: 230px;
+  height: 230px;
+
+  border-color: rgba(167, 139, 250, 0.25);
+
+  animation-direction: reverse;
+
+  animation-duration: 6s;
+}
+
+.offer-ring-three {
+  width: 400px;
+  height: 400px;
+
+  border-color: rgba(192, 132, 252, 0.08);
+
+  animation-duration: 12s;
+}
+
+@keyframes offerOrbit {
+
+  from {
+    transform:
+      rotateX(65deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      rotateX(65deg)
+      rotateZ(360deg);
+  }
+
+}
+
+
+/* ========================================
+   MAIN PRODUCT
+======================================== */
+
+.offer-product {
+  position: relative;
+
+  z-index: 4;
+
+  width: 230px;
+  height: 270px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid rgba(216, 180, 254, 0.3);
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 92, 246, 0.35),
+      rgba(30, 15, 60, 0.8)
+    );
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(139, 92, 246, 0.15);
+
+  transform:
+    perspective(800px)
+    rotateY(-8deg)
+    rotateX(4deg);
+
+  animation: offerProductFloat 4s ease-in-out infinite;
+}
+
+@keyframes offerProductFloat {
+
+  0%,
+  100% {
+    transform:
+      perspective(800px)
+      rotateY(-8deg)
+      rotateX(4deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(800px)
+      rotateY(-8deg)
+      rotateX(4deg)
+      translateY(-14px);
+  }
+
+}
+
+.offer-product-glow {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(192, 132, 252, 0.3),
+      transparent 70%
+    );
+
+  filter: blur(15px);
+}
+
+.offer-product-icon {
+  position: relative;
+
+  font-size: 65px;
+
+  filter:
+    drop-shadow(
+      0 0 20px rgba(216, 180, 254, 0.35)
+    );
+}
+
+.offer-product span {
+  position: relative;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #c4b5fd;
+}
+
+.offer-product strong {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 27px;
+
+  line-height: 1.1;
+
+  color: #ffffff;
+}
+
+
+/* ========================================
+   FLOATING CARDS
+======================================== */
+
+.offer-floating-card {
+  position: absolute;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 14px;
+
+  background: rgba(15, 8, 35, 0.75);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.25);
+
+  animation: floatingOfferCard 4s ease-in-out infinite;
+}
+
+.offer-floating-card > span {
+  font-size: 22px;
+}
+
+.offer-floating-card div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.offer-floating-card strong {
+  font-size: 12px;
+
+  color: #ffffff;
+}
+
+.offer-floating-card small {
+  font-size: 9px;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.offer-card-top {
+  top: 40px;
+  right: 30px;
+}
+
+.offer-card-bottom {
+  bottom: 45px;
+  left: 25px;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes floatingOfferCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .special-offer-card {
+    grid-template-columns: 1fr;
+
+    padding: 60px 45px;
+  }
+
+  .offer-content {
+    max-width: 700px;
+  }
+
+  .offer-visual {
+    margin-top: 30px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .special-offer-section {
+    padding: 80px 5%;
+  }
+
+  .special-offer-card {
+    padding: 45px 25px;
+
+    border-radius: 25px;
+  }
+
+  .offer-content h2 {
+    font-size: 38px;
+
+    letter-spacing: -1px;
+  }
+
+  .offer-content p {
+    font-size: 14px;
+  }
+
+  .offer-discount strong {
+    font-size: 48px;
+  }
+
+  .offer-visual {
+    height: 350px;
+  }
+
+  .offer-product {
+    width: 180px;
+    height: 220px;
+  }
+
+  .offer-ring-one {
+    width: 250px;
+    height: 250px;
+  }
+
+  .offer-ring-two {
+    width: 180px;
+    height: 180px;
+  }
+
+  .offer-ring-three {
+    width: 300px;
+    height: 300px;
+  }
+
+  .offer-card-top {
+    top: 15px;
+    right: 0;
+  }
+
+  .offer-card-bottom {
+    bottom: 15px;
+    left: 0;
+  }
+
+}

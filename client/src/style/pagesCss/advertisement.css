@@ -1,0 +1,805 @@
+/* =========================================
+   SHOPNET PREMIUM ADVERTISEMENT
+========================================= */
+
+.advertisement-page {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #7e22ce 0%,
+      #581c87 25%,
+      #2e1065 55%,
+      #0f061d 100%
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  animation: adPageEnter 1.2s ease forwards;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.ad-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+
+  opacity: 0.25;
+}
+
+.ad-glow-1 {
+  width: 450px;
+  height: 450px;
+
+  background: #c084fc;
+
+  top: -180px;
+  left: -100px;
+
+  animation: glowOne 8s ease-in-out infinite alternate;
+}
+
+.ad-glow-2 {
+  width: 400px;
+  height: 400px;
+
+  background: #9333ea;
+
+  right: -150px;
+  bottom: -150px;
+
+  animation: glowTwo 10s ease-in-out infinite alternate;
+}
+
+.ad-glow-3 {
+  width: 250px;
+  height: 250px;
+
+  background: #e879f9;
+
+  top: 45%;
+  left: 45%;
+
+  opacity: 0.12;
+
+  animation: glowThree 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.particles {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.particles span {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  animation: particleFloat 6s linear infinite;
+}
+
+.particles span:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+  left: 20%;
+  top: 70%;
+  animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+  left: 35%;
+  top: 15%;
+  animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+  left: 70%;
+  top: 25%;
+  animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+  left: 85%;
+  top: 65%;
+  animation-delay: 1.5s;
+}
+
+.particles span:nth-child(6) {
+  left: 75%;
+  top: 80%;
+  animation-delay: 2.5s;
+}
+
+.particles span:nth-child(7) {
+  left: 45%;
+  top: 85%;
+  animation-delay: 4s;
+}
+
+.particles span:nth-child(8) {
+  left: 5%;
+  top: 50%;
+  animation-delay: 3.5s;
+}
+
+
+/* =========================================
+   FLOATING SHOPPING ELEMENTS
+========================================= */
+
+.floating-item {
+  position: absolute;
+
+  font-size: 28px;
+
+  opacity: 0.2;
+
+  pointer-events: none;
+
+  filter: blur(0.2px);
+
+  animation: floatingItem 6s ease-in-out infinite;
+}
+
+.item-1 {
+  top: 20%;
+  left: 12%;
+}
+
+.item-2 {
+  top: 25%;
+  right: 15%;
+
+  animation-delay: 1s;
+}
+
+.item-3 {
+  bottom: 20%;
+  left: 15%;
+
+  animation-delay: 2s;
+}
+
+.item-4 {
+  bottom: 25%;
+  right: 13%;
+
+  animation-delay: 3s;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.advertisement-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 30px;
+
+  animation: contentEnter 1.4s ease forwards;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.ad-welcome span {
+  font-size: 11px;
+
+  letter-spacing: 7px;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   SHOPNET TITLE
+========================================= */
+
+.shopnet-title {
+  margin: 10px 0;
+
+  font-size: clamp(
+    50px,
+    8vw,
+    100px
+  );
+
+  font-weight: 900;
+
+  letter-spacing: 14px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #e9d5ff,
+      #ffffff,
+      #d8b4fe,
+      #ffffff
+    );
+
+  background-size: 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    titleShine 5s linear infinite,
+    titleGlow 3s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   TITLE LINE
+========================================= */
+
+.title-line {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.title-line span {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.title-line p {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.logo-video-wrapper {
+  position: relative;
+
+  width: 240px;
+  height: 240px;
+
+  margin: 10px auto 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-video-container {
+  position: relative;
+
+  z-index: 3;
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 0 40px rgba(192, 132, 252, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(15px);
+
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+.logo-video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   VIDEO RINGS
+========================================= */
+
+.video-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(216, 180, 254, 0.25);
+
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 220px;
+  height: 220px;
+
+  animation: ringRotate 8s linear infinite;
+}
+
+.ring-2 {
+  width: 240px;
+  height: 240px;
+
+  border-style: dashed;
+
+  opacity: 0.4;
+
+  animation: ringRotateReverse 12s linear infinite;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.ad-description {
+  margin: 5px 0 25px;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  color: #ede9fe;
+}
+
+.ad-description span {
+  color: #c4b5fd;
+}
+
+
+/* =========================================
+   CONTINUE
+========================================= */
+
+.continue-area {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  animation: continuePulse 2s ease-in-out infinite;
+}
+
+.continue-circle {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.continue-circle span {
+  font-size: 18px;
+
+  animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+.continue-text {
+  text-align: left;
+}
+
+.continue-text p {
+  margin: 0;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  font-weight: 700;
+}
+
+.continue-text span {
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================
+   BOTTOM BRANDING
+========================================= */
+
+.ad-footer {
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 12px;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  opacity: 0.4;
+
+  z-index: 5;
+}
+
+.ad-footer i {
+  font-style: normal;
+}
+
+
+/* =========================================
+   CORNERS
+========================================= */
+
+.ad-corner {
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+
+  opacity: 0.3;
+
+  z-index: 5;
+}
+
+.top-left {
+  top: 25px;
+  left: 25px;
+
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.top-right {
+  top: 25px;
+  right: 25px;
+
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.bottom-left {
+  bottom: 25px;
+  left: 25px;
+
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.bottom-right {
+  bottom: 25px;
+  right: 25px;
+
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+
+/* =========================================
+   EXIT ANIMATION
+========================================= */
+
+.advertisement-close {
+  animation: advertisementExit 0.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes adPageEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes advertisementExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes glowOne {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(150px, 100px);
+  }
+}
+
+@keyframes glowTwo {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-130px, -100px);
+  }
+}
+
+@keyframes glowThree {
+  0%,
+  100% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes floatingItem {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(10deg);
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes titleShine {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 300%;
+  }
+}
+
+@keyframes titleGlow {
+  from {
+    filter: drop-shadow(
+      0 0 5px rgba(216, 180, 254, 0.2)
+    );
+  }
+
+  to {
+    filter: drop-shadow(
+      0 0 25px rgba(216, 180, 254, 0.6)
+    );
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes continuePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes arrowMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .advertisement-content {
+    padding: 20px;
+  }
+
+  .shopnet-title {
+    font-size: 48px;
+
+    letter-spacing: 7px;
+  }
+
+  .logo-video-wrapper {
+    width: 210px;
+    height: 210px;
+  }
+
+  .logo-video-container {
+    width: 165px;
+    height: 165px;
+  }
+
+  .ring-1 {
+    width: 195px;
+    height: 195px;
+  }
+
+  .ring-2 {
+    width: 210px;
+    height: 210px;
+  }
+
+  .ad-description {
+    font-size: 15px;
+  }
+
+  .floating-item {
+    font-size: 20px;
+  }
+
+  .ad-footer {
+    bottom: 15px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+}

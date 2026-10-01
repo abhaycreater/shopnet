@@ -1,0 +1,799 @@
+/* =================================
+   SHOPNET HEADER
+================================= */
+
+.shopnet-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(168, 85, 247, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(59, 130, 246, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      110deg,
+      #211035,
+      #32134f,
+      #48186b,
+      #211035
+    );
+
+  background-size: 100% 100%, 100% 100%, 200% 100%;
+
+  border-bottom: 1px solid rgba(216, 180, 254, 0.18);
+
+  box-shadow:
+    0 8px 30px rgba(35, 15, 60, 0.3);
+
+  font-family: "Poppins", sans-serif;
+
+  /* IMPORTANT:
+     Do not hide the profile dropdown */
+  overflow: visible;
+}
+
+
+/* =================================
+   ANIMATED LIGHT LINE
+================================= */
+
+.shopnet-header::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -50%;
+
+  width: 200%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #a855f7,
+    #d8b4fe,
+    #60a5fa,
+    #a855f7,
+    transparent
+  );
+
+  background-size: 200% 100%;
+
+  animation: navLightLine 5s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes navLightLine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+/* =================================
+   NAV CONTENT
+================================= */
+
+.shopnet-nav {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  min-height: 74px;
+
+  padding: 0 3.5%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  /* IMPORTANT */
+  overflow: visible;
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.shopnet-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  text-decoration: none;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  white-space: nowrap;
+
+  transition: transform 0.25s ease;
+}
+
+
+/* Logo Image */
+
+.shopnet-logo-img {
+  width: 38px;
+  height: 38px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(216, 180, 254, 0.35)
+    );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+
+/* Logo hover */
+
+.shopnet-logo:hover .shopnet-logo-img {
+  transform: rotate(-5deg) scale(1.08);
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(216, 180, 254, 0.65)
+    );
+}
+
+
+.shopnet-logo span {
+  color: white;
+}
+
+
+.shopnet-logo strong {
+  color: #d8b4fe;
+  font-weight: 800;
+}
+
+
+.shopnet-logo:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =================================
+   NAV LINKS
+================================= */
+
+.shopnet-links {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-left: 45px;
+}
+
+
+.shopnet-link {
+  position: relative;
+
+  padding: 10px 16px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.shopnet-link:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-2px);
+}
+
+
+.shopnet-link.active {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ACTIVE UNDERLINE */
+
+.shopnet-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  background: #d8b4fe;
+
+  border-radius: 20px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+
+  box-shadow:
+    0 0 8px rgba(216, 180, 254, 0.8);
+}
+
+
+.shopnet-link.active::after {
+  width: 22px;
+}
+
+
+/* =================================
+   RIGHT ACTIONS
+================================= */
+
+.shopnet-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  /* IMPORTANT */
+  position: relative;
+  z-index: 1000;
+
+  overflow: visible;
+}
+
+
+/* =================================
+   CART
+================================= */
+
+.shopnet-cart {
+  height: 40px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: white;
+
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+
+.shopnet-cart:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 20px rgba(168, 85, 247, 0.18);
+}
+
+
+.shopnet-cart b {
+  min-width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d8b4fe;
+
+  color: #32134f;
+
+  font-size: 9px;
+
+  box-shadow:
+    0 0 10px rgba(216, 180, 254, 0.5);
+}
+
+
+/* =================================
+   LOGIN
+================================= */
+
+.shopnet-login {
+  height: 40px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #32134f;
+
+  background: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+
+.shopnet-login:hover {
+  background: #f3e8ff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(168, 85, 247, 0.25);
+}
+
+
+/* =================================
+   PROFILE
+================================= */
+
+.shopnet-profile-wrapper {
+  position: relative;
+
+  /* IMPORTANT */
+  z-index: 10000;
+
+  overflow: visible;
+}
+
+
+/* Profile Button */
+
+.shopnet-profile {
+  height: 40px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 9px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+
+.shopnet-profile:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(216, 180, 254, 0.35);
+}
+
+
+/* Profile Icon */
+
+.profile-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(216, 180, 254, 0.18);
+
+  font-size: 13px;
+}
+
+
+/* Arrow */
+
+.profile-arrow {
+  font-size: 8px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.profile-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =================================
+   PROFILE DROPDOWN
+================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 240px;
+
+  padding: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #211035,
+      #32134f,
+      #24123d
+    );
+
+  border:
+    1px solid rgba(216, 180, 254, 0.18);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(168, 85, 247, 0.12);
+
+  animation: profileDrop 0.25s ease;
+
+  /* IMPORTANT */
+  z-index: 99999;
+
+  /* Make sure nothing clips the content */
+  overflow: visible;
+}
+
+
+@keyframes profileDrop {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =================================
+   PROFILE HEADER
+================================= */
+
+.profile-dropdown-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+}
+
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #6366f1
+    );
+
+  font-size: 17px;
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+
+.profile-dropdown-header strong {
+  display: block;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.profile-dropdown-header span {
+  display: block;
+
+  margin-top: 2px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 10px;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.profile-divider {
+  height: 1px;
+
+  margin: 6px 0;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =================================
+   DROPDOWN LINKS
+================================= */
+
+.profile-dropdown > a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  transition: all 0.2s ease;
+}
+
+
+.profile-dropdown > a:hover {
+  color: white;
+
+  background:
+    rgba(168, 85, 247, 0.14);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =================================
+   LOGOUT
+================================= */
+
+.logout-button {
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  text-align: left;
+
+  font-family:
+    "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.logout-button:hover {
+  color: #fca5a5;
+
+  background:
+    rgba(239, 68, 68, 0.10);
+}
+
+
+/* =================================
+   GLOWING BACKGROUND
+================================= */
+
+.shopnet-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  left: 20%;
+
+  border-radius: 50%;
+
+  background: #8b5cf6;
+
+  filter: blur(70px);
+
+  opacity: 0.18;
+
+  pointer-events: none;
+
+  animation:
+    navGlow 8s ease-in-out infinite;
+}
+
+
+@keyframes navGlow {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(100px, 20px);
+  }
+}
+
+
+/* =================================
+   MOBILE PROFILE
+================================= */
+
+@media (max-width: 750px) {
+
+  .profile-text {
+    display: none;
+  }
+
+  .shopnet-profile {
+    width: 40px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .profile-arrow {
+    display: none;
+  }
+
+  .profile-dropdown {
+    right: 0;
+
+    width: 210px;
+  }
+}
+
+
+/* =================================
+   MOBILE NAVBAR
+================================= */
+
+@media (max-width: 750px) {
+
+  .shopnet-nav {
+    min-height: 65px;
+
+    padding: 0 18px;
+  }
+
+  .shopnet-logo {
+    font-size: 23px;
+  }
+
+  .shopnet-links {
+    display: none;
+  }
+
+  .shopnet-cart span {
+    display: none;
+  }
+
+  .shopnet-cart {
+    width: 40px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .shopnet-login {
+    height: 38px;
+
+    padding: 0 14px;
+  }
+}
