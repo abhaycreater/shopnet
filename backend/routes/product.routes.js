@@ -3,7 +3,7 @@ const { protect } = require('../middleware/authMiddleware.js')
 const { admin } = require('../middleware/adminMiddleware.js')
 const {getProducts ,getProductById, createProduct ,updateProduct , deleteProduct}= require('../controller/product.controller.js')
 const multer = require('multer')
-const upload = multer({dest: 'uploads/'})
+const upload = multer({ storage: multer.memoryStorage() })
 
 
 

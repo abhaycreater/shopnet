@@ -1,5 +1,25 @@
 const Product = require('../model/product.model.js')
 const cloudinary = require('../config/cloudinary.js')
+const streamifier = require('streamifier')
+
+const uploadToCloudinary = (buffer) => {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: "shopnet-products",
+      },
+      (error, result) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      }
+    );
+
+    streamifier.createReadStream(buffer).pipe(stream);
+  });
+};
 
 //Get all Product
 const getProducts = async (req , res)=>{
@@ -68,8 +88,8 @@ const createProduct = async (req, res) => {
     }
 
     // Upload image to Cloudinary
-    const result = await cloudinary.uploader.upload(
-      req.file.path
+    const result = await uploadToCloudinary(
+      req.file.buffer
     );
 
     const product = await Product.create({
@@ -138,8 +158,8 @@ const updateProduct = async (req ,res)=>{
 
         //update image if new image is uploaded
         if(req.file){
-            const result = await cloudinary.uploader.upload(
-                req.file.path
+            const result = await uploadToCloudinary(
+                req.file.buffer
             );
 
             product.imageUrl = result.secure_url;
