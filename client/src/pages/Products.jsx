@@ -9,7 +9,7 @@ const Products = () => {
   const [error, setError] = useState("");
 
   // Admin
-  const [user, setUser] = useState(null);
+  const [, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
   // Create / Edit
